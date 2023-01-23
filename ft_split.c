@@ -44,7 +44,7 @@ static int	ft_wcount(const char *str, char c)
 	return (count);
 }
 
-static char	*ft_putword(char word, const char *s, int i, int wlen)
+static char	*ft_putword(char *word, const char *s, int i, int wlen)
 {
 	int	j;
 
@@ -59,7 +59,7 @@ static char	*ft_putword(char word, const char *s, int i, int wlen)
 	return (word);
 }
 
-static char	**ft_split_words(const char *s, char c, char *s2, int wnumber)
+static char	**ft_split_words(const char *s, char c, char **s2, int wnumber)
 {
 	int	i;
 	int	word;
@@ -96,7 +96,7 @@ char	**ft_split(const char *s, char c)
 	if (!s)
 		return (0);
 	nwords = ft_wcount(s, c);
-	s2 = (char **)malloc(sizeof(char) * (nwords + 1));
+	s2 = (char **)malloc(sizeof(char *) * (nwords + 1));
 	if (!s2)
 		return (0);
 	s2 = ft_split_words(s, c, s2, nwords);

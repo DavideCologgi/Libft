@@ -6,26 +6,26 @@
 /*   By: dcologgi <dcologgi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 14:19:05 by dcologgi          #+#    #+#             */
-/*   Updated: 2023/01/23 12:11:45 by dcologgi         ###   ########.fr       */
+/*   Updated: 2023/01/23 15:51:49 by dcologgi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	memcmp(const void *str1, const void *str2, size_t n)
+int	ft_memcmp(const void *str1, const void *str2, size_t n)
 {
-	size_t			i;
 	unsigned char	*ptr1;
 	unsigned char	*ptr2;
 
-	i = 0;
-	ptr1 = str1;
-	ptr2 = str2;
-	while (i < n && *ptr1 == *ptr2)
+	if (n == 0)
+		return (0);
+	ptr1 = (unsigned char *)str1;
+	ptr2 = (unsigned char *)str2;
+	while ((*ptr1 == *ptr2) && n - 1 > 0)
 	{
 		ptr1++;
 		ptr2++;
-		i++;
+		n--;
 	}
 	return ((int)(*ptr1 - *ptr2));
 }

@@ -6,7 +6,7 @@
 /*   By: dcologgi <dcologgi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 12:28:36 by dcologgi          #+#    #+#             */
-/*   Updated: 2023/01/23 12:13:20 by dcologgi         ###   ########.fr       */
+/*   Updated: 2023/01/23 14:58:17 by dcologgi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static int	ft_set_is_present(const char c, const char *set)
 	int	i;
 
 	i = 0;
-	while (set[i])
+	while (set[i] != '\0')
 	{
 		if (set[i] == c)
 			return (1);
@@ -48,7 +48,7 @@ char	*ft_strtrim(const char *s1, const char *set)
 		else
 			break ;
 	}
-	trim = (char *)malloc(sizeof(char) * size + 1);
+	trim = (char *)malloc(size * sizeof(char) + 1);
 	if (!trim)
 		return (NULL);
 	ft_strlcpy(trim, (char *)s1, size + 1);
