@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/22 19:04:34 by marvin            #+#    #+#             */
-/*   Updated: 2023/01/22 19:04:34 by marvin           ###   ########.fr       */
+/*   Created: 2023/01/22 18:10:57 by marvin            #+#    #+#             */
+/*   Updated: 2023/01/22 18:10:57 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(void *))
+void	ft_putnbr_fd(int n, int fd)
 {
-	t_list	*node;
+	long	nb;
 
-	if (!lst)
-		return ;
-	while (*lst)
+	nb = n;
+	if (n < 0)
 	{
-		node = (*lst) -> next;
-		ft_lstdelone(*lst, del);
-		*lst = node;
+		write(fd, "-", 1);
+		nb = -nb;
 	}
+	if (nb > 9)
+	{
+		ft_putnbr_fb(nb / 10, fd);
+		ft_putchar_fd((nb % 10) + '0', fd);
+	}
+	else
+		ft_putchar_fd(nb + '0', fd);
 }

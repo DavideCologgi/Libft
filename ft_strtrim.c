@@ -6,7 +6,7 @@
 /*   By: dcologgi <dcologgi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 12:28:36 by dcologgi          #+#    #+#             */
-/*   Updated: 2023/01/19 14:41:35 by dcologgi         ###   ########.fr       */
+/*   Updated: 2023/01/23 12:13:20 by dcologgi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ char	*ft_strtrim(const char *s1, const char *set)
 	size_t	size;
 	char	*trim;
 
-	size = 0;
 	if (!s1 || !set)
 		return (NULL);
 	while (s1)
@@ -39,7 +38,7 @@ char	*ft_strtrim(const char *s1, const char *set)
 		if (ft_set_is_present(((char)*s1), set) == 1)
 			s1++;
 		else
-			break;
+			break ;
 	}
 	size = ft_strlen(s1);
 	while (size != 0)
@@ -47,11 +46,11 @@ char	*ft_strtrim(const char *s1, const char *set)
 		if (ft_set_is_present(s1[size - 1], set) == 1)
 			size--;
 		else
-			break;
+			break ;
 	}
 	trim = (char *)malloc(sizeof(char) * size + 1);
 	if (!trim)
 		return (NULL);
-	ft_strlcpy( trim, (char *)s1, size + 1);
+	ft_strlcpy(trim, (char *)s1, size + 1);
 	return (trim);
 }
