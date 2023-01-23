@@ -6,7 +6,7 @@
 /*   By: dcologgi <dcologgi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 14:44:43 by dcologgi          #+#    #+#             */
-/*   Updated: 2023/01/19 14:57:02 by dcologgi         ###   ########.fr       */
+/*   Updated: 2023/01/23 13:14:08 by dcologgi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ char	*ft_itoa(int n)
 	itoa[len] = '\0';
 	len--;
 	if (n == 0)
-		itoa[0] == '0';
+		itoa[0] = '0';
 	if (n < 0)
 	{
 		number = -n;

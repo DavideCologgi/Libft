@@ -15,18 +15,14 @@ CC = gcc
 RM = rm -f
 CFLAGS = -Wall -Werror -Wextra
 
-.c.o:
-		${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
+.o:.c
+		${CC} ${CFLAGS} ${OBJECTS} $< -o ${<:.c=.o}
 
 ${NAME}: ${OBJECTS}
 		${LIBC} ${NAME} ${OBJECTS}
 		ranlib ${NAME}
 
 all: ${NAME}
-
-bonus: ${NAME} ${OBJECTS_BONUS}
-		${LIBC} ${NAME} ${OBJECTS_BONUS}
-		ranlib ${NAME}
 
 clean:
 		${RM} ${OBJECTS} ${OBJECTS_BONUS}
@@ -35,3 +31,7 @@ fclean: clean
 		${RM} ${NAME} ${bonus}
 
 re: fclean all
+
+bonus: ${OBJECTS} ${OBJECTS_BONUS}
+		${LIBC} ${NAME} ${OBJECTS} ${OBJECTS_BONUS}
+		ranlib ${NAME}
