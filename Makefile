@@ -20,11 +20,13 @@ CFLAGS = -Wall -Werror -Wextra
 
 ${NAME}: ${OBJECTS}
 		${LIBC} ${NAME} ${OBJECTS}
+		ranlib ${NAME}
 
 all: ${NAME}
 
 bonus: ${NAME} ${OBJECTS_BONUS}
 		${LIBC} ${NAME} ${OBJECTS_BONUS}
+		ranlib ${NAME}
 
 clean:
 		${RM} ${OBJECTS} ${OBJECTS_BONUS}

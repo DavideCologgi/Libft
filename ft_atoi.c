@@ -6,7 +6,7 @@
 /*   By: dcologgi <dcologgi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 09:45:41 by dcologgi          #+#    #+#             */
-/*   Updated: 2023/01/19 11:18:13 by dcologgi         ###   ########.fr       */
+/*   Updated: 2023/01/23 13:03:45 by dcologgi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_atoi(const char *str)
 {
-	size_t				sign;
-	size_t				i;
+	int					sign;
+	int					i;
 	unsigned long int	result;
 
 	i = 0;
@@ -33,7 +33,7 @@ int	ft_atoi(const char *str)
 	while (ft_isdigit(str[i]))
 	{
 		result = result * 10;
-		result = result + (str[i] - '0');
+		result = result + str[i] - '0';
 		i++;
 	}
 	return (result * sign);
