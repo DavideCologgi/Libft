@@ -1,8 +1,8 @@
 Libft (Library of Functions)
 
-In this project, you will be creating a library of functions and the file structure for this project is the following:
+In this project, I created a library of functions with the following file-structure:
 
-- .c Files:
+<b> .c Files: <b>
 Where all of your functions will be written in.
 
 - .h (Header):
