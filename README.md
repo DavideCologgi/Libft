@@ -2,7 +2,7 @@ Libft (Library of Functions)
 
 In this project, I created a library of functions with the following file-structure:
 
-<b> .c Files: <b>
+<b> .c Files: </b> <br>
 Where all of your functions will be written in.
 
 - .h (Header):
